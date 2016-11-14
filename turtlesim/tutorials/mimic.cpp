@@ -18,7 +18,7 @@ Mimic::Mimic()
 {
   ros::NodeHandle input_nh("input");
   ros::NodeHandle output_nh("output");
-  twist_pub_ = output_nh.advertise<geometry_msgs::Twist>("cmd_vel", 1);
+  twist_pub_ = output_nh.advertise<geometry_msgs::Twist>("cmd_vel_mod", 1);
   pose_sub_ = input_nh.subscribe<turtlesim::Pose>("pose", 1, &Mimic::poseCallback, this);
 }
 
@@ -37,4 +37,3 @@ int main(int argc, char** argv)
 
   ros::spin();
 }
-

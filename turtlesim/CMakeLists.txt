@@ -1,12 +1,14 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 2.8.9)
 project(turtlesim)
 
 find_package(catkin REQUIRED COMPONENTS geometry_msgs message_generation rosconsole roscpp roscpp_serialization roslib rostime std_msgs std_srvs)
 
 find_package(Qt5Widgets REQUIRED)
+find_package(Qt5Core REQUIRED)
 find_package(Boost REQUIRED COMPONENTS thread)
 
 include_directories(include ${catkin_INCLUDE_DIRS} ${Boost_INCLUDE_DIRS})
+include_directories(${Qt5Widgets_INCLUDE_DIRS})
 link_directories(${catkin_LIBRARY_DIRS})
 
 add_message_files(DIRECTORY msg FILES
